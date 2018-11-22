@@ -10,7 +10,8 @@
 		<module>shop-service</module>
 		<module>shop-persistent</module>
 		<module>shop-api</module>
-	</modules>
+        <module>shop-common</module>
+    </modules>
 	<packaging>pom</packaging>
 
 	<name>shop</name>
