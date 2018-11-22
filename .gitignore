@@ -1,0 +1,17 @@
+# Java
+*.class
+
+# Idea
+/.idea
+mall-stock.iml
+
+# Eclipse
+/.settings
+.project
+
+# project
+/*/*
+!/*/src
+!/*/pom.xml
+/logs
+*.log
