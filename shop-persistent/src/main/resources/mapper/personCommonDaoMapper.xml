@@ -18,7 +18,7 @@
     </sql>
     <select id="getCountByDimension" resultType="com.wk.boot.shop.common.dto.DimensionDto">
         <foreach collection="list" item="item" separator=" union all">
-            select count(*) colNum,#{item.desc} as desc ,#{item.code} as code from person_common
+            select count(*) colNum,#{item.desc} as `desc`,#{item.code} as code from person_common
             where 1 = 1
             <if test="item.gender !=null">
                and  gender = #{item.gender}
