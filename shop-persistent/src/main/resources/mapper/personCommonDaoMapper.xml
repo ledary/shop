@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.wk.boot.shop.persistent.dao.PersonCommonDao">
+    <resultMap id="BaseResultMap" type="com.wk.boot.shop.persistent.entity.PersonCommonEntity" >
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="big" property="big" jdbcType="TINYINT" />
+        <result column="distance" property="distance" jdbcType="INTEGER" />
+        <result column="gender" property="gender" jdbcType="VARCHAR" />
+        <result column="height" property="height" jdbcType="INTEGER" />
+        <result column="weight" property="weight" jdbcType="INTEGER" />
+        <result column="width" property="width" jdbcType="INTEGER" />
+
+    </resultMap>
+
+    <sql id="baseSql">
+        id,user_name,password,email
+    </sql>
+    <select id="getCountByDimension" resultType="com.wk.boot.shop.common.dto.DimensionDto">
+        <foreach collection="list" item="item" separator=" union all">
+            select count(*) colNum,#{item.desc} as desc ,#{item.code} as code from person_common
+            where 1 = 1
+            <if test="item.gender !=null">
+               and  gender = #{item.gender}
+            </if>
+            <if test="item.height !=null">
+               and height = #{item.height}
+            </if>
+            <if test="item.width !=null">
+              and width = #{item.width}
+            </if>
+            <if test="item.distance !=null">
+               and  distance = #{item.distance}
+            </if>
+            <if test="item.big !=null">
+               and  big = #{item.big}
+            </if>
+            <if test="item.weight !=null">
+                and weight = #{item.weight}
+            </if>
+            group by
+            <foreach collection="item.cloumns" item="it" separator=",">
+               #{it}
+            </foreach>
+
+        </foreach>
+
+    </select>
+
+
+</mapper>
