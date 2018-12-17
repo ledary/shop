@@ -27,13 +27,13 @@ public class ThreadTask {
         Future<List<ClassDto>> task1 = threadService.getClassList();
         Future<List<TeacherDto>> task2 = threadService.getTeacherList();
         Future<List<UserDto>> task3 = threadService.getUserList();
-        // 回调函数 Future,等待任务执行完毕
-        for (;;) {
-            if (task1.isDone()) {
-                System.out.println("task1");
-                break;
-            }
-        }
+//        // 回调函数 Future,等待任务执行完毕
+//        for (;;) {
+//            if (task1.isDone()) {
+//                System.out.println("task1");
+//                break;
+//            }
+//        }
         try{
             dto.setClassDtoList(task1.get());
             dto.setTeacherDtoList(task2.get());
