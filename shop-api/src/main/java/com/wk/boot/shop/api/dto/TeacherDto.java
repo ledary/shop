@@ -1,7 +1,6 @@
 package com.wk.boot.shop.api.dto;
 
 
-import com.alibaba.fastjson.JSON;
 import lombok.Data;
 
 /**
@@ -10,20 +9,9 @@ import lombok.Data;
 @Data
 public class TeacherDto {
 
-    private String uuid;
-    private UserDto userDto;
+    private Long id;
+    private Integer teacherId;
+    private String teacherName;
 
 
-    public static void main(String[] args) {
-        TeacherDto teacherDto = new TeacherDto();
-        UserDto userDto = new UserDto();
-        userDto.setPassword("232323");
-        userDto.setUserName("某某某");
-        userDto.setEmail("122@com");
-        teacherDto.setUserDto(userDto);
-        teacherDto.setUuid("121212");
-
-        String jsonStr = JSON.toJSONString(teacherDto);
-        System.out.println(jsonStr);
-    }
 }
