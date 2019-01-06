@@ -15,4 +15,5 @@ mall-stock.iml
 !/*/pom.xml
 /logs
 *.log
+*.iml
 .DS_Store
