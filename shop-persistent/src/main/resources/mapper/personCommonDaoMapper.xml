@@ -10,11 +10,10 @@
         <result column="height" property="height" jdbcType="INTEGER" />
         <result column="weight" property="weight" jdbcType="INTEGER" />
         <result column="width" property="width" jdbcType="INTEGER" />
-
     </resultMap>
 
     <sql id="baseSql">
-        id,user_name,password,email
+        id,big,distance,gender,height,weight,width
     </sql>
     <select id="getCountByDimension" resultType="com.wk.boot.shop.common.dto.DimensionDto">
         <foreach collection="list" item="item" separator=" union all">

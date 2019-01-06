@@ -19,3 +19,8 @@ redis哨兵主从——cluster
 Elasticsearch 操作日志，log日志
 
 
+所做测试例子
+1、基于springboot SYNC的异步例子。
+    返回结果的消耗时间取最慢的一个线程。
+
+
