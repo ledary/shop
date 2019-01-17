@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.Socket;
 
 /**
+ * 模拟Jedis 操作工具类
  * Created by wgp on 2018/12/24.
  */
 public class RedisSocket {
